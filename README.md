@@ -1,4 +1,3 @@
-# masterpiece
 **"Szoftverfejlesztő és tesztelő technikus szakma" Komplex programozói munka - "Vizsgaremek"**
 
 A képzés záró feladataként a következő rendszer kerül megvalósításra:
