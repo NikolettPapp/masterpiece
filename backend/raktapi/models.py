@@ -1,17 +1,17 @@
 from django.db import models
 
 # Create your models here.
-class Osszetevo(models.Model):
-    nev = models.CharField(max_length=200)
+class Part(models.Model):
+    name = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.nev
+        return self.name
 
-class Csomag(models.Model):
-    nev = models.CharField(max_length=200)
-    ar = models.PositiveBigIntegerField()
-    osszetevok = models.ManyToManyField(Osszetevo)
+class Device(models.Model):
+    name = models.CharField(max_length=200)
+    price = models.PositiveBigIntegerField()
+    devices = models.ManyToManyField(Part)
 
     def __str__(self):
-        return self.nev
+        return self.name
     
