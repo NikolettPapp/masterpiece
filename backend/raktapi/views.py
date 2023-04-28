@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from .models import Device, Part
+from .models import Device, Part # A Part-ok visszaadására is 
 
 # Create your views here.
 def getCommand(request):
@@ -7,10 +7,10 @@ def getCommand(request):
         "api/devices": "All devices"
     }
 
-    return JsonResponse(endpoints)
+    return JsonResponse(endpoints) # A JsonResponse Python dictionary-t vár bemenetként
 
 
-def getDevices(requests):
+def getDevices(request):
     devices = Device.objects.all()
 
     serialised_devices = []

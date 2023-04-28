@@ -6,10 +6,12 @@ class Part(models.Model):
 
     def __str__(self):
         return self.name
-    
-    def serializer(self):
-        return {"id":self.id, "name": self.name} # Python dictionary-t ad vissza
 
+# A serializer-ekker azt tudjuk meghatározni, hogy az API-ban milyen adatok jelenjenek meg. Másrészt egy dictiomary        
+    def serializer(self):
+        return {"id":self.id, "name": self.name} # Python dictionary-t ad vissza. ID-ja mindennek van. Automatikusan növekedik az értéke.
+
+# A "Device" adatai
 class Device(models.Model):
     name = models.CharField(max_length=200)
     price = models.PositiveBigIntegerField()
@@ -19,15 +21,16 @@ class Device(models.Model):
         return self.name
     
     def serializer(self):
-        serialized_parts = []
+        serialized_parts = [] # Egy lista az alkotóelemeknek
 
-        for part in self.parts.all():
-            serialized_parts.append(part.serializer())
+        for part in self.devices.all():
+            serialized_parts.append(part.serializer()) #Adjuk hozzá az alkotóelemeket
 
-            #Létrehozzuk a tömböt
 
+# Python dictionary szintén. Név, ár és a kapcsolódó alkotóelemek szerepelnek benne. 
         return{
             "name": self.name,
             "price": self.price,
             "parts": serialized_parts
         }
+    
