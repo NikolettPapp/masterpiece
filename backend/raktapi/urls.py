@@ -1,7 +1,7 @@
 from django.urls import path, include
-from .views import getCommand
+from .views import getCommand, getDevices
 
 urlpatterns = [
-    path('', getCommand)
+    path('', getCommand),
+    path('devices/', getDevices),
 ]
-
