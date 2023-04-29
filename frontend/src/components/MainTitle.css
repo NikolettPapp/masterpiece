@@ -1,0 +1,15 @@
+.main-title-holder{
+    background-color: rgb(120, 0, 0);
+    padding: 30px;
+}
+
+.main-title-holder>h1{
+    text-align: center;
+    color: #FAFAFA;
+}
+
+.main-title-holder>h2{
+    text-align: center;
+    color: #AAAA ;
+}
+
