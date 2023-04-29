@@ -2,10 +2,13 @@ Include
 Lib
 Scripts
 pyvenv.cfg
-backend/backend
 manage.py
 db.sqlite3
 migrations
-__pycache__
 .env
 secret.py
+backend/raktapi/migrations
+backend/Lib
+backend/Scripts
+__pycache__
+.jpg

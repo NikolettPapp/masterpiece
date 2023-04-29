@@ -16,6 +16,7 @@ class Device(models.Model):
     name = models.CharField(max_length=200)
     price = models.PositiveBigIntegerField()
     devices = models.ManyToManyField(Part)
+    image = models.ImageField(upload_to="images/", null=True) # Az eszköz fényképének kezelése - tárolási mappája. Kép nélküli is engedélyezett.
 
     def __str__(self):
         return self.name
@@ -31,6 +32,7 @@ class Device(models.Model):
         return{
             "name": self.name,
             "price": self.price,
-            "parts": serialized_parts
+            "parts": serialized_parts,
+            "image": str(self.image) # Stringé alakítjuk a kép nevét, hogy kezelni tudjuk
         }
     
