@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
 .main-title-holder{
     background-color: rgb(120, 0, 0);
     padding: 30px;
@@ -6,6 +8,7 @@
 .main-title-holder>h1{
     text-align: center;
     color: #FAFAFA;
+    font-family: 'Courgette', cursive;
 }
 
 .main-title-holder>h2{
