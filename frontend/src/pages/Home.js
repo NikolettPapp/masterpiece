@@ -6,7 +6,7 @@ import MainTitle from '../components/MainTitle';
 import './css/Home.css'
 
 
-const Home = () => {
+const Home = (props) => {
 
   
     return (
@@ -14,7 +14,7 @@ const Home = () => {
         <div className='container'>
   
           <div className='row'>
-            {devices}
+            {props.devices}
           </div>
         </div>
       </div>

@@ -56,7 +56,7 @@ function App() {
       </div>
 
       <Routes>
-        <Route path="/" element={< Home />} /> 
+        <Route path="/" element={< Home devices={devices} />} />
         <Route path="/about" element={< About />} />
         <Route path="/dump" element={< Dump />} />
 
