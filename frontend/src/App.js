@@ -1,8 +1,17 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import MainTitle from './components/MainTitle';
-import DeviceCard from './components/DeviceCard';
+import Navbar from './components/Navbar';
 
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Dump from './pages/Dump'; /* (Kun) Dump storage - átmeneti raktár */
+import About from './pages/About'; /* (Kun) A cégről - névjegy */
+
+import Home from './pages/Home';
+
+import DeviceCard from '../src/components/DeviceCard';
+
+/* A Routing System kezelésére */
 function App() {
   const [devices, setDevices] = useState([]) /* (Kun) Az eszközök tömbje */
 
@@ -36,19 +45,24 @@ function App() {
     })
   }, [])
 
-  return (
-    <div className="App">
+
+  return(
+    <BrowserRouter>
       <div className='container'>
         <div className='row'>
           <MainTitle />
-        </div>
-
-        <div className='row'>
-          {devices}
+          <Navbar />
         </div>
       </div>
-    </div>
-  );
+
+      <Routes>
+        <Route path="/" element={< Home />} /> 
+        <Route path="/about" element={< About />} />
+        <Route path="/dump" element={< Dump />} />
+
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App;

@@ -1,5 +1,5 @@
 import React from 'react'
-import './DeviceCard.css'
+import '../../src/components/css/DeviceCard.css'
 
 const DeviceCard = (props) => {
   return (
