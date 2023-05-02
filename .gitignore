@@ -2,9 +2,7 @@ Include
 Lib
 Scripts
 pyvenv.cfg
-manage.py
 db.sqlite3
-migrations
 .env
 secret.py
 backend/Lib
