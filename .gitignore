@@ -7,7 +7,6 @@ db.sqlite3
 migrations
 .env
 secret.py
-backend/raktapi/migrations
 backend/Lib
 backend/Scripts
 __pycache__

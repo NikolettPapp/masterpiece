@@ -1,0 +1,43 @@
+Lépésenkénti útmutató az adott webes rendszer letöltéséhez és a fejlesztőrendszerbeli elindításához.
+
+Alap:
+  0., Futtatási környezet biztosítása
+
+Kód letöltése a github-ról
+  1., Visual Studio Code elindítása
+  2., Clone Git Repository ...
+  3., Clone from Github
+  4., https://github.com/NikolettPapp/masterpiece.git
+  5., C:\Users\iktta\source\repos
+( 5.b., : A helyi git környezetnek megfelelő mappa kiválasztása )
+  6., [Select as Repository Destination]
+  7., [Would you like to open the cloned repository?] [Open]
+  8., [Terminal][New Terminal]
+( 8.b., Ha minden jól megy a PowerShell terminálban ezt kell látnunk: PS C:\Users\iktta\source\repos\masterpiece> )
+
+
+Backend lekezelése, elindítása. Visual Studio Code-ban:
+  9., python -m venv . 
+ 10., .\Scripts\activate 
+ 11., pip install -r requirements.txt
+ 12., python.exe -m pip install --upgrade pip
+ 13., cd .\backend\
+ 14., python manage.py makemigrations
+ 15., python manage.py migrate
+ 16., python .\manage.py createsuperuser
+(16b., adjuk meg a létrehozandő django rendszergazda felhasználói nevét és jelszavát. Email nem kötelező. Gyenge jelszó esetén jóváhagyás.)
+ 17., python .\manage.py runserver 
+ 18., http://127.0.0.1:8000/admin
+(18.b., Böngészőben nyissuk meg az adott hivatkozást, jelentkezzünk be a korábban létrehozott felhasználóval. )
+  
+Frontend lekezelése, elindítása. Visual Studio Code-ban:
+ 19., [Terminal][New Terminal]
+(19.b., Ha minden jól megy a PowerShell terminálban ezt kell látnunk: PS C:\Users\iktta\source\repos\masterpiece> )
+ 20., cd .\frontend\
+ 21., npm install
+(21b., az 'npm install' parancs automatikusan telepíti az összes függőséget a package.json alapján )
+ 22., npm audit fix --force
+ 23., npm run start 
+ 24., http://localhost:3000/
+(24b., A böngészőben automatikusan betöltődik a fenti cím és megjelenik a Backend-en létrehozott elemek képe és neve. )
+
