@@ -15,6 +15,27 @@ import DeviceCard from '../src/components/DeviceCard';
 function App() {
   const [devices, setDevices] = useState([]) /* (Kun) Az eszközök tömbje */
 
+
+  /* Az elemeket kijelölés után át tudjuk adni az átmeneti raktárba */
+  /* Az alapértelmezett állapota az, hogy üres */
+  const [dumpWarehouse, setdumpWarehouse] = useState([])
+
+  /* A gomb lenyomásakor lefutó függvény */
+  /* Megkapja, hogy mire kattintottunk  */
+  const addBtnClicked = (addedDevice) => {
+    setdumpWarehouse([ ...dumpWarehouse, addedDevice]) /* hozzáadjuk a meglévőhöz  */
+    
+    /* Az előbbi sor egyenértékü azzal, hogy: */
+    /*
+    let newWarehouse = dumpWarehouse
+    newWarehouse.push(addedDevice)
+    dumpWarehouse(newWarehouse)
+    */
+
+    console.log(dumpWarehouse) /* ez csak naplózás  */
+
+  }
+
   useEffect(() => {
     fetch("http://127.0.0.1:8000/api/devices/") /* egyébként .env file-ba írnánk, hogy könnyebb legyen kezelni */
     .then(res => res.json())
@@ -37,13 +58,14 @@ function App() {
         parts={parts} 
         price = {data[devI].price } 
         image = {"http://127.0.0.1:8000/media/" + data[devI].image } /* (Kun) .env javasolt*/
+        addBtnClicked = {addBtnClicked}
         />
-          )
+        )
       } /* for */
 
       setDevices(apiDevices)
     })
-  }, [])
+  }, [addBtnClicked])
 
 
   return(
@@ -51,14 +73,14 @@ function App() {
       <div className='container'>
         <div className='row'>
           <MainTitle />
-          <Navbar />
+          <Navbar dumpWarehouse={dumpWarehouse} />
         </div>
       </div>
 
       <Routes>
         <Route path="/" element={< Home devices={devices} />} />
         <Route path="/about" element={< About />} />
-        <Route path="/dump" element={< Dump />} />
+        <Route path="/dump" element={< Dump dumpWarehouse = {dumpWarehouse} />} />
 
       </Routes>
     </BrowserRouter>

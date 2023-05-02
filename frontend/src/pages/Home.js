@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React, {useState, useEffect} from 'react';
 
 // eslint-disable-next-line
@@ -5,8 +6,9 @@ import MainTitle from '../components/MainTitle';
 
 import './css/Home.css'
 
-
-const Home = (props) => {
+/* A beárkező props-okat szétszedi annak alkotóelemeire. Utána lehetne hivatkozni az elemeire. */
+/* Azt hívjuk: dekonstruálásnak. */
+const Home = ({devices}) => {
 
   
     return (
@@ -14,7 +16,7 @@ const Home = (props) => {
         <div className='container'>
   
           <div className='row'>
-            {props.devices}
+            {devices}
           </div>
         </div>
       </div>

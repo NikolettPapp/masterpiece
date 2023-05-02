@@ -1,5 +1,9 @@
 **"Szoftverfejlesztő és tesztelő technikus szakma" Komplex programozói munka - "Vizsgaremek"**
 
+( Public Read-only Microsoft OneDrive Share Link: 
+https://1drv.ms/f/s!AnR0Tz-6S6wpimDskaNVdRSvYsdo?e=jd7Zww
+)
+
 A képzés záró feladataként a következő rendszer kerül megvalósításra:
 
     Fantázianév: 
