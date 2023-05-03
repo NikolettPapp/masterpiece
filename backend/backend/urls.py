@@ -19,10 +19,23 @@ from django.urls import path, include
 from django.conf import settings # (Kun) hogy a settings.py állományhoz hozzáférjünk
 from django.conf.urls.static import static # (Kun) 
 
+from raktapi.views import ProductList
+from raktapi.views import ProductDetail
+from raktapi.views import ProductGroupList
+from raktapi.views import ProductGroupDetail
+from raktapi.views import ProductInGroupList
+
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('raktapi.urls')),
+    path('products/', ProductList.as_view()),
+    path('products/<int:ean>/', ProductDetail.as_view()),
+    path('groups/', ProductGroupList.as_view()),
+    path('groups/<int:id>/', ProductGroupDetail.as_view()),
+    path('groups/<int:pk>/products/', ProductInGroupList.as_view()),
 ]
 
 if settings.DEBUG:   # (Kun) Ha debug módban vagyunk - lásd settings.py
