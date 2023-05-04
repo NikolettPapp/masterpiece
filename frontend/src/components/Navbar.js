@@ -9,6 +9,9 @@ const Navbar = () => {
         <Link to="/">Kezdőlap</Link>
         <Link to="/about">Rólunk</Link>
         <Link to="/dump">Átmeneti raktár</Link>
+        <Link to="/products">Termék keresés</Link>
+        <Link to="/groups">Csoport keresés</Link>
+
     </nav>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import './css/Dump.css'
+import './css/Groups.css'
 
 const Dump = (dumpWarehouse) => {
 
@@ -8,7 +8,7 @@ const Dump = (dumpWarehouse) => {
 
   return (
     <div className='container'>
-      <h1>Dump of complex devices</h1>
+      <h1>Árucsoportok megjelenítésa</h1>
     </div>
   )
 }

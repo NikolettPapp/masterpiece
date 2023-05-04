@@ -1,11 +1,10 @@
 // eslint-disable-next-line
 import React, {useState, useEffect} from 'react';
-import './css/Home.css'
 
 // eslint-disable-next-line
 import MainTitle from '../components/MainTitle';
 
-import './css/Home.css'
+import './css/Products.css'
 
 /* A beárkező props-okat szétszedi annak alkotóelemeire. Utána lehetne hivatkozni az elemeire. */
 /* Azt hívjuk: dekonstruálásnak. */

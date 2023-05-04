@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Dump from './pages/Dump'; /* (Kun) Dump storage - átmeneti raktár */
 import About from './pages/About'; /* (Kun) A cégről - névjegy */
+import Products from './pages/Products'; /* (Kun) Egy termékcsoport */
 
 import Home from './pages/Home';
 

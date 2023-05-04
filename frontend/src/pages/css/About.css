@@ -1,0 +1,20 @@
+.container {
+    margin: 0 auto;
+    max-width: 800px;
+    }
+    
+    .company-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    
+    .company-info img {
+    max-width: 200px;
+    margin-right: 20px;
+    }
+    
+    .company-info .info {
+    font-size: 20px;
+    line-height: 1.5;
+    }
