@@ -1,3 +1,5 @@
+import os
+
 """
 Django settings for backend project.
 
@@ -108,9 +110,22 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+#LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'hu'
 
-TIME_ZONE = 'UTC'
+LANGUAGES = [
+    ('hu', 'Magyar'),
+    ('en', 'English'),
+]
+
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'raktapi', 'locale'),
+]
+
+
+#TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Budapest'
+
 
 USE_I18N = True
 

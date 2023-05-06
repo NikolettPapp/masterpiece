@@ -1,3 +1,5 @@
+#A fő URL-ek, de ide raktapi API-hoz kapcsolódó URL-ek
+
 """backend URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -24,9 +26,6 @@ from raktapi.views import ProductDetail
 from raktapi.views import ProductGroupList
 from raktapi.views import ProductGroupDetail
 from raktapi.views import ProductInGroupList
-
-
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
