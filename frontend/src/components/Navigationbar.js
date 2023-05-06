@@ -10,7 +10,7 @@ import {LinkContainer} from 'react-router-bootstrap'
 const Navigationbar = () => {
   return (
     <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">Raktár menedzsment</Navbar.Brand>
+        <Navbar.Brand>Raktár menedzsment</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
