@@ -22,13 +22,18 @@ class App extends React.Component  {
       devices: [],
       setDevices: [],
       dumpWarehouse:[],
-      setdumpWarehouse: []
     }
   }
 
   setDevices(devices){
     this.state.devices = devices;
     console.log(this.state.devices);
+  }
+
+  setdumpWarehouse(addedDevice){
+    console.log("Added device:"+addedDevice);
+    this.state.dumpWarehouse.push(addedDevice);
+    console.log(this.state.dumpWarehouse);
   }
 
   componentDidMount(){
@@ -42,7 +47,7 @@ class App extends React.Component  {
     /* A gomb lenyomásakor lefutó függvény */
     /* Megkapja, hogy mire kattintottunk  */
     const addBtnClicked = (addedDevice) => {
-      setdumpWarehouse([ ...dumpWarehouse, addedDevice]) /* hozzáadjuk a meglévőhöz  */
+      this.setdumpWarehouse(addedDevice) /* hozzáadjuk a meglévőhöz  */
       
       /* Az előbbi sor egyenértékü azzal, hogy: */
       /*
@@ -50,8 +55,6 @@ class App extends React.Component  {
       newWarehouse.push(addedDevice)
       dumpWarehouse(newWarehouse)
       */
-  
-      console.log(dumpWarehouse) /* ez csak naplózás  */
     }
     fetch("http://127.0.0.1:8000/api/devices/") /* egyébként .env file-ba írnánk, hogy könnyebb legyen kezelni */
     .then(res => res.json())

@@ -10,8 +10,6 @@ import './css/Home.css'
 /* A beárkező props-okat szétszedi annak alkotóelemeire. Utána lehetne hivatkozni az elemeire. */
 /* Azt hívjuk: dekonstruálásnak. */
 const Home = ({devices}) => {
-  console.log("Home");
-    console.log(devices)
   
     return (
       <div className="App">
