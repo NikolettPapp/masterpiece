@@ -143,6 +143,28 @@ import './css/Products.css'
                     }
                   />
                 </th>
+                <th>
+                  Leírás
+                  <br />
+                  <input
+                    type="text"
+                    value={this.state.textFilter}
+                    onChange={(e) =>
+                      this.setState({ textFilter: e.target.value })
+                    }
+                  />
+                </th>
+                <th>
+                  Ár
+                  <br />
+                  <input
+                    type="text"
+                    value={this.state.textFilter}
+                    onChange={(e) =>
+                      this.setState({ textFilter: e.target.value })
+                    }
+                  />
+                </th>
                 <th></th>
               </tr>
             </thead>
@@ -152,6 +174,8 @@ import './css/Products.css'
                   <td>{index}</td>
                   <td>{entry.ean}</td>
                   <td>{entry.name}</td>
+                  <td>{entry.description}</td>
+                  <td>{entry.price}</td>
                   <td
                     style={{
                       backgroundColor: "#FFFF",
