@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import './App.css';
 import MainTitle from './components/MainTitle';
 import Navigationbar from './components/Navigationbar';
@@ -8,6 +8,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Dump from './pages/Dump'; /* (Kun) Dump storage - átmeneti raktár */
 import About from './pages/About'; /* (Kun) A cégről - névjegy */
 import Products from './pages/Products'; /* (Kun) Egy termékcsoport */
+import Groups from './pages/Groups';
 
 import Home from './pages/Home';
 
@@ -24,6 +25,8 @@ class App extends React.Component  {
       dumpWarehouse:[],
     }
   }
+
+
 
   setDevices(devices){
     this.state.devices = devices;
@@ -103,6 +106,7 @@ class App extends React.Component  {
         <Route path="/about" element={< About />} />
         <Route path="/dump" element={< Dump dumpWarehouse = {this.state.dumpWarehouse} />} />
         <Route path="/products" element={< Products devices={this.state.devices}/>} />
+        <Route path="/groups" element={< Groups devices={this.state.devices}/>} />
 
       </Routes>
     </BrowserRouter>
