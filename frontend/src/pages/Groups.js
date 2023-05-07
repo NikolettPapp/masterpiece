@@ -8,7 +8,7 @@ const Dump = (dumpWarehouse) => {
 
   return (
     <div className='container'>
-      <h1>Árucsoportok megjelenítésa</h1>
+      <h1>Árucsoportok megjelenítése</h1>
     </div>
   )
 }

@@ -27,7 +27,6 @@ class App extends React.Component  {
 
   setDevices(devices){
     this.state.devices = devices;
-    console.log(this.state.devices);
   }
 
   setdumpWarehouse(addedDevice){
@@ -83,6 +82,7 @@ class App extends React.Component  {
       } /* for */
     
       this.setState({devices: apiDevices});
+      this.setDevices({devices: apiDevices});
     
     });
   }
@@ -102,6 +102,7 @@ class App extends React.Component  {
         <Route path="/" element={< Home devices={this.state.devices} />} />
         <Route path="/about" element={< About />} />
         <Route path="/dump" element={< Dump dumpWarehouse = {this.state.dumpWarehouse} />} />
+        <Route path="/products" element={< Products devices={this.state.devices}/>} />
 
       </Routes>
     </BrowserRouter>
