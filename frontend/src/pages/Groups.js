@@ -15,14 +15,14 @@ import GroupCard from '../components/GroupCard';
   constructor(props) {
     super();
     this.state = {
-        data: []
+        data: null
     }
-    this.fetchData = this.fetchData.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  componentDidMount(){
+  /*componentDidMount(){
     this.fetchData();
-  }
+  }*/
 
   RemoveEachRow = (index) => {
     console.log("-----", index);
@@ -31,7 +31,26 @@ import GroupCard from '../components/GroupCard';
     });
   };
 
-  fetchData()
+  handleClick(){
+    if(this.state.labelFilter!='' && this.state.labelFilter!==null)
+    fetch('http://127.0.0.1:8000/groups/'+this.state.labelFilter)
+    .then(response=>response.json())
+    .then((data) => {
+      console.log("Fetch data")
+      console.log(data);
+
+      if(data!=undefined)
+        this.setState({
+          data:data
+        });
+      else 
+      this.setState({
+        data:[]
+      })
+    });
+  }
+
+  /*fetchData()
   {
     fetch('http://127.0.0.1:8000/groups/')
     .then(response=>response.json())
@@ -48,9 +67,9 @@ import GroupCard from '../components/GroupCard';
         data:[]
       })
     });
-};
+ };*/
 
-  render() {
+  /*render() {
     let filteredData = this.state.data;
 
     if (this.state.labelFilter) {
@@ -63,30 +82,36 @@ import GroupCard from '../components/GroupCard';
       filteredData = this.state.data.filter(
         (dt) => dt.item === this.state.textFilter
       );
-    }
+    }*/
+  render(){
+    let groups = this.state.data;
+    console.log("render")
+    console.log(groups)
 
     return (
       <div className="container">
         <div className="row">
-                  Csoport Id
-                  <br />
+                  <h3>Csoport Id</h3>
                   <input
+                    className='col-5 me-5'
                     type="text"
                     value={this.state.labelFilter}
                     onChange={(e) =>
                       this.setState({ labelFilter: e.target.value })
                     }
                   />
-                  </div>
-              {filteredData.map((entry, index) => (
+                  
+                  <button className='col-6' onClick={this.handleClick}>Keresés</button>
+                  </div>{groups!=null && groups.detail!='Nem található.' &&
                 <
-                 GroupCard
-                  ean = { entry.ean} 
-                  name = { entry.name} 
-                  parts = {entry.parts} 
-                  price = {entry.price } 
-                />
-              ))}
+                  GroupCard
+                  id = {groups.id} 
+                  name = {groups.name} 
+                  description = {groups.description} 
+                  price = {groups.price} 
+                  />
+                  }
+              
       </div>
     );
   }

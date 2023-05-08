@@ -56,14 +56,14 @@ import './css/Products.css'
       <div className="container">
         <div className="row">
                   <h3>EAN szám</h3>
-                  <input className='col-6'
+                  <input className='col-5 me-5'
                     type="text"
                     value={this.state.labelFilter}
                     onChange={(e) =>
                       this.setState({ labelFilter: e.target.value })
                     }
                   />
-                  <button className='col-6' onClick={this.handleClick}>Button</button>
+                  <button className='col-6' onClick={this.handleClick}>Keresés</button>
                   </div>{product!=null && product.detail!='Nem található.' && 
                 <
                         Item

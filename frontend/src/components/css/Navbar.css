@@ -1,9 +1,10 @@
 nav{
     width: 100%;
-    padding: 10px;
+    height: 70px;
+    margin-bottom: 10px;
     background-color: rgb(120, 0, 0, 0.8); /* a fejléccel megegyező háttér - egybeolvad így */
     display: flex;
-    justify-content: right; 
+    justify-content: right;
 }
 
 nav>a{
@@ -11,6 +12,12 @@ nav>a{
     color: white;
     border: 1px solid white;
     margin: 0px 5px; 
+}
+
+.show{
+    transition: initial;
+    background-color: darkgray;
+    transition: background-color 1s ease;
 }
 
 /* a hover állapotban, amikor rávisszük az egeret is legyen fehér */
