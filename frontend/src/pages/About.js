@@ -9,7 +9,7 @@ const About = () => {
 
 
   <div className='info'>
-    <h2>A cég neve: Warehouse Managment Kft.</h2>
+    <h3>A cég neve: Warehouse Managment Kft.</h3>
       <p>A cég címe: Debrecen, Magyarország</p>
       <p>A cég telefonszáma: 123 2324 1234</p>
       <p>A cég email címe: ceg@email.com</p>
