@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import MainTitle from './components/MainTitle';
+import Footer from './components/Footer';
 import Navigationbar from './components/Navigationbar';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -94,10 +95,11 @@ class App extends React.Component  {
 
   return(
     <BrowserRouter>
-      <Container>
+      <Container class="main-container">
         <Row>
           <MainTitle />
           <Navigationbar dumpWarehouse={this.state.dumpWarehouse} />
+          
         </Row>
       </Container>
 
@@ -109,6 +111,7 @@ class App extends React.Component  {
         <Route path="/groups" element={< Groups devices={this.state.devices}/>} />
 
       </Routes>
+      <Footer/>
     </BrowserRouter>
   )
   }

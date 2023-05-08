@@ -85,7 +85,6 @@ import GroupCard from '../components/GroupCard';
                   name = { entry.name} 
                   parts = {entry.parts} 
                   price = {entry.price } 
-                  image = {entry.image}
                 />
               ))}
       </div>

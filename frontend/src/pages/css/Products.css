@@ -1,1 +1,15 @@
+.row button{
+    max-width: fit-content;
+    font-size: 20px;
+}
+.row button:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #e7e7e7;
+  }
+.row h3{
+    font-size: 14px;
+    text-align: justify;
 
+
+} 

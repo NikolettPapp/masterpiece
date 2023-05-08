@@ -16,14 +16,11 @@ import './css/Products.css'
   constructor(props) {
     super();
     this.state = {
-        data: []
+        data: null
     }
-    this.fetchData = this.fetchData.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  componentDidMount(){
-    this.fetchData();
-  }
 
   RemoveEachRow = (index) => {
     console.log("-----", index);
@@ -32,13 +29,13 @@ import './css/Products.css'
     });
   };
 
-  fetchData()
-  {
-    fetch('http://127.0.0.1:8000/products')
+  handleClick(){
+    if(this.state.labelFilter!='' && this.state.labelFilter!==null)
+    fetch('http://127.0.0.1:8000/products/'+this.state.labelFilter)
     .then(response=>response.json())
     .then((data) => {
       console.log("Fetch data")
-      console.log(data.devices);
+      console.log(data);
 
       if(data!=undefined)
         this.setState({
@@ -49,49 +46,36 @@ import './css/Products.css'
         data:[]
       })
     });
-};
+  }
 
   render() {
-    let filteredData = this.state.data;
-
-    if (this.state.labelFilter) {
-      filteredData = this.state.data.filter(
-        (dt) => dt.ean === this.state.labelFilter
-      );
-    }
-
-    if (this.state.textFilter) {
-      filteredData = this.state.data.filter(
-        (dt) => dt.item === this.state.textFilter
-      );
-    }
-
+    let product = this.state.data;
+    console.log("render")
+    console.log(product)
     return (
       <div className="container">
         <div className="row">
-                  EAN szám
-                  <br />
-                  <input
+                  <h3>EAN szám</h3>
+                  <input className='col-6'
                     type="text"
                     value={this.state.labelFilter}
                     onChange={(e) =>
                       this.setState({ labelFilter: e.target.value })
                     }
                   />
-                  </div>
-                  
-              {filteredData.map((entry, index) => (
+                  <button className='col-6' onClick={this.handleClick}>Button</button>
+                  </div>{product!=null && product.detail!='Nem található.' && 
                 <
                         Item
-                        ean = { entry.ean} 
-                        name = { entry.name} 
-                        parts = {entry.parts} 
-                        price = {entry.price } 
-                        image = {entry.image}
+                        ean = { product.ean} 
+                        name = { product.name} 
+                        parts = {product.parts} 
+                        price = {product.price } 
+                        image = {product.image}
                         />
+                  }
                         
-              ))}
       </div>
     );
   }
-}
+} 
